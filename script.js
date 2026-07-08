@@ -1,7 +1,8 @@
 const display = document.getElementById("display");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("[data-value]");
 const clearButton = document.getElementById("clear");
 const equalsButton = document.getElementById("equals");
+const listaHistorial = document.getElementById("listaHistorial");
 
 let primerValor = "";
 let segundoValor = "";
@@ -31,6 +32,7 @@ function esOperador(valor){
 buttons.forEach(function(button){
     button.addEventListener("click", function(){
         let value = button.dataset.value;
+        
         if(esOperador(value)){
             guardarOperacion(value);
         }
@@ -44,18 +46,25 @@ clearButton.addEventListener("click", limpiarDisplay);
 
 equalsButton.addEventListener("click", calcularResultado);
 
-function calcularResultado(){
+function calcularResultado() {
     segundoValor = display.value;
-    if(operador === "+"){
-        display.value = parseFloat(primerValor) + parseFloat(segundoValor);
+    let resultado = "";
+    switch (operador) {
+        case "+":
+            resultado = parseFloat(primerValor) + parseFloat(segundoValor);
+            break;
+        case "-":
+            resultado = parseFloat(primerValor) - parseFloat(segundoValor);
+            break;
+        case "*":
+            resultado = parseFloat(primerValor) * parseFloat(segundoValor);
+            break;
+        case "/":
+            resultado = parseFloat(primerValor) / parseFloat(segundoValor);
+            break;
     }
-    else if(operador === "-"){
-        display.value = parseFloat(primerValor) - parseFloat(segundoValor);
-    }
-    else if(operador === "*"){
-        display.value = parseFloat(primerValor) * parseFloat(segundoValor);
-    }
-    else if(operador === "/"){
-        display.value = parseFloat(primerValor) / parseFloat(segundoValor);
-    }
+    display.value = resultado;
+    const elementoHistorial = document.createElement("li");
+    elementoHistorial.textContent = `${primerValor} ${operador} ${segundoValor} = ${resultado}`;
+    listaHistorial.appendChild(elementoHistorial);
 }

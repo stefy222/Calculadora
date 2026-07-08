@@ -6,29 +6,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="contenedor" >
     <h1>Calculadora</h1>
-
     <div class="calculadora">
         <input type="text" id="display" readonly>
         <div class="buttons">
-            <button class="btn" data-value="7">7</button>
-            <button class="btn" data-value="8">8</button>
-            <button class="btn" data-value="9">9</button>
+            <button class="btnCalculadora" data-value="7">7</button>
+            <button class="btnCalculadora" data-value="8">8</button>
+            <button class="btnCalculadora" data-value="9">9</button>
             <button class="btn operator" data-value="/">/</button>
 
-            <button class="btn" data-value="4">4</button>
-            <button class="btn" data-value="5">5</button>
-            <button class="btn" data-value="6">6</button>
+            <button class="btnCalculadora" data-value="4">4</button>
+            <button class="btnCalculadora" data-value="5">5</button>
+            <button class="btnCalculadora" data-value="6">6</button>
             <button class="btn operator" data-value="*">x</button>
 
-            <button class="btn" data-value="1">1</button>
-            <button class="btn" data-value="2">2</button>
-            <button class="btn" data-value="3">3</button>
+            <button class="btnCalculadora" data-value="1">1</button>
+            <button class="btnCalculadora" data-value="2">2</button>
+            <button class="btnCalculadora" data-value="3">3</button>
             <button class="btn operator" data-value="-">-</button>
 
-
-            <button class="btn" data-value="0">0</button>
-            <button class="btn" data-value=".">.</button>
+            <button class="btnCalculadora" data-value="0">0</button>
+            <button class="btnCalculadora" data-value=".">.</button>
             <button class="btn operator" id="equals">=</button>
             <button class="btn operator" data-value="+">+</button>
 
@@ -36,6 +35,12 @@
         </div>
     </div>
 
+
+    <div class="historial">
+        <h3>Historial</h3>
+        <ul id="listaHistorial"></ul>
+    </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
