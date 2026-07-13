@@ -20,14 +20,21 @@ h1{
     margin-bottom: 20px;
 }
 
-/* Contenedor */
 .calculadora{
     width: 300px;
-    background-color: #c369a0;
+    background-color: #e9a7d0;
     border-radius: 16px;
     box-shadow: 0px 8px 18px rgba(5, 3, 3, 0.18);
     padding: 14px;
     border: none;
+}
+
+#operacionActual {
+    height: 20px;
+    text-align: right;
+    color: gray;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 #display{
@@ -108,4 +115,13 @@ h1{
 .contenedor{
     display: flex;
     gap: 30px;
+}
+
+.btnBorrar{
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
 }

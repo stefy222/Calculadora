@@ -9,7 +9,10 @@
     <div class="contenedor" >
     <h1>Calculadora</h1>
     <div class="calculadora">
-        <input type="text" id="display" readonly>
+        <div class="display">
+            <div id="operacionActual"></div>
+            <input type="text" id="display" readonly>
+        </div>
         <div class="buttons">
             <button class="btnCalculadora" data-value="7">7</button>
             <button class="btnCalculadora" data-value="8">8</button>
@@ -39,6 +42,7 @@
     <div class="historial">
         <h3>Historial</h3>
         <ul id="listaHistorial"></ul>
+        <button class="btnBorrar" id="borrarHistorial">Borrar historial</button>
     </div>
     </div>
     <script src="script.js"></script>
